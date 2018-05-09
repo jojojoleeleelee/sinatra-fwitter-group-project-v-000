@@ -71,14 +71,4 @@ class TweetsController < ApplicationController
     @user = User.find_by_id(session[:user_id])
     erb :"/tweets/show_tweet"
   end
-
-  helpers do
-    def current_user
-      User.find(session[:user_id])
-    end
-
-    def users_tweet?
-      current_user.id == session[:user_id]
-    end
-  end
 end
